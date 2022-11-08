@@ -1,0 +1,5 @@
+int a = 3, b = 1, c = 3;
+void func () {
+    int a = 5;
+    return a + b;
+}
