@@ -84,7 +84,7 @@ public class TextParse {
             out.write("总共有 " + predictions.size() + " 条数据\n");
             out.write("\n");
             for (String s : predictions.keySet()) {
-                out.write(s + "    " + "文法: " + predictions.get(s).left + "->" +
+                out.write(s + "   " + "文法: " + predictions.get(s).left + "->" +
                         Arrays.toString(predictions.get(s).right) + "\n");
             }
             out.close();
@@ -92,28 +92,6 @@ public class TextParse {
             throw new RuntimeException(e);
         }
     }
-
-//    public static void main(String[] args) {
-//        Do();
-//        for (Formula formula : formulas) {
-//            System.out.println("left: " + formula.left + " right: " + Arrays.toString(formula.right));
-//        }
-//        for (String s : terminals) {
-//            System.out.println("终结符: " + s);
-//        }
-//        for (String s : nonTerminals) {
-//            System.out.println("非终结符: " + s);
-//        }
-//        for (String s : firsts.keySet()) {
-//            System.out.println("First: " + "Key: " + s + " Value: " + firsts.get(s));
-//        }
-//        for (String s : follows.keySet()) {
-//            System.out.println("Follow: " + "Key: " + s + " Value: " + follows.get(s));
-//        }
-//        for (String s : predictions.keySet()) {
-//            System.out.println("Prediction: " + s + " Value: " + Arrays.toString(predictions.get(s).right));
-//        }
-//    }
 
     // 入口
     static void Do() {
@@ -202,8 +180,6 @@ public class TextParse {
 class Formula {
     String left;
     String[] right;
-    // 初始化select集
-    ArrayList<String> select = new ArrayList<String>();
     public Formula(String left, String[] right){
         this.left = left;
         this.right = right;

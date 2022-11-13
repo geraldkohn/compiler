@@ -50,7 +50,7 @@ public class PredictMap {
     static String getMapKey(String terminal, String nonTerminal) {
         // i 为终结符，横坐标
         // j 为非终结符，纵坐标
-        return  "{横坐标: " + terminal + " , " + "纵坐标: " + nonTerminal + "}";
+        return  "{横坐标: " + terminal + "  " + "纵坐标: " + nonTerminal + "}";
     }
 
 }

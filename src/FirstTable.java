@@ -57,9 +57,6 @@ public class FirstTable {
                     }
                     // OneOfRights -> $
                     if (isCanBeNull(formulas, right)) {
-                        // 新增的，不知对错，试一试
-//                        firsts.get(right).add("$"); // First(oneOfRights) += {"$"}
-//                        System.out.println("----------------");
                         continue;
                     } else {
                         break;
