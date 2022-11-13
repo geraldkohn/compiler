@@ -1,0 +1,184 @@
+int <KW,1>
+a <Ident,a>
+= <OP,11>
+3 <INT,3>
+; <SE,24>
+int <KW,1>
+b <Ident,b>
+= <OP,11>
+5 <INT,5>
+; <SE,24>
+void <KW,2>
+func <Ident,func>
+( <SE,20>
+) <SE,21>
+{ <SE,22>
+int <KW,1>
+a <Ident,a>
+= <OP,11>
+5 <INT,5>
+; <SE,24>
+return <KW,3>
+a <Ident,a>
++ <OP,6>
+b <Ident,b>
+; <SE,24>
+} <SE,23>
+
+1	program#int	reduction
+2	compUnit#int	reduction
+
+3	decl#int	reduction
+4	valDecl#int	reduction
+5	btype#int	reduction
+6	int#int	move
+7	varDef#Ident	reduction
+8	Ident#Ident	move
+
+9	argVarDef#=	reduction
+
+10	=#=	move
+11	initVal#INT	reduction
+12	exp#INT	reduction
+
+13	assignExp#INT	reduction
+14	eqExp#INT	reduction	
+15	relExp#INT	reduction
+
+
+16	addExp#INT	reduction
+17	mulExp#INT	reduction
+18	unaryExp#INT	reduction
+19	primaryExp#INT	reduction
+20	number#INT	reduction
+21	INT#INT	move	
+
+22	mulExpAtom#;	reduction
+23	addExpAtom#;	reduction
+24	relExpAtom#;	reduction
+25	eqExpAtom#;	reduction
+26	assignExpAtom#;	reduction
+27	argVarDecl#;	reduction
+
+28	;#;	move
+
+29	compUnit#int	reduction
+
+30	decl#int	reduction
+31	valDecl#int	reduction
+32	btype#int	reduction
+33	int#int	move
+34	varDef#Ident	reduction
+35	Ident#Ident	move
+
+36	argVarDef#=	reduction
+
+37	=#=	move
+38	initVal#INT	reduction
+39	exp#INT	reduction
+
+40	assignExp#INT	reduction
+41	eqExp#INT	reduction
+42	relExp#INT	reduction
+
+43	addExp#INT	reduction
+44	mulExp#INT	reduction
+45	unaryExp#INT	reduction
+46	primaryExp#INT	reduction
+47	number#INT	reduction
+48	INT#INT	move	
+
+49	mulExpAtom#;	reduction
+50	addExpAtom#;	reduction
+51	relExpAtom#;	reduction
+52	eqExpAtom#;	reduction
+53	assignExpAtom#;	reduction
+54	argVarDecl#;	reduction
+
+55	;#;	move
+
+56	compUnit#void	reduction
+
+57	funcDef#void	reduction
+58	funcType#void	reduction
+59	void#void	move
+60	Ident#Ident	move
+61	(#(	move
+
+62	funcFParams#)	reduction
+
+63	)#)	move
+64	block#{	reduction
+65	{#{	move
+
+66	blockItem#int	reduction
+67	decl#int	reduction
+68	valDecl#int	reduction
+69	btype#int	reduction
+70	int#int	move
+71	varDef#Ident	reduction
+72	Ident#Ident	move
+
+73	argVarDef#=	reduction
+
+74	=#=	move
+75	initVal#INT	reduction
+76	exp#INT	reduction
+
+77	assignExp#INT	reduction
+78	eqExp#INT	reduction
+79	relExp#INT	reduction
+
+80	addExp#INT	reduction
+81	mulExp#INT	reduction
+82	unaryExp#INT	reduction
+83	primaryExp#INT	reduction
+84	number#INT	reduction
+85	INT#INT	move
+
+86	mulExpAtom#;	reduction
+87	addExpAtom#;	reduction
+88	relExpAtom#;	reduction
+89	eqExpAtom#;	reduction
+90	assignExpAtom#;	reduction
+91	argVarDecl#;	reduction
+	
+92	;#;	move
+
+93	blockItem#return	reduction		
+94	stmt#return	reduction
+95	return#return	move
+
+96	argExp#Ident	reduction
+97	exp#Ident	reduction
+98	assignExp#Ident	reduction
+99	eqExp#Ident	reduction
+100	relExp#Ident	reduction
+
+101	addExp#Ident	reduction
+102	mulExp#Ident	reduction
+103	unaryExp#Ident	reduction
+104	Ident#Ident	move
+
+105	callFunc#+	reduction
+106	mulExpAtom#+	reduction
+107	addExpAtom#+	reduction
+
+108	+#+	move
+109	mulExp#Ident	reduction
+110	unaryExp#Ident	reduction
+111	Ident#Ident	move	
+
+112	callFunc#;	reduction
+113	mulExpAtom#;	reduction
+114	addExpAtom#;	reduction
+115	relExpAtom#;	reduction
+116	eqExpAtom#;	reduction
+117	assignExpAtom#;	reduction
+
+118	;#;	move
+
+119	blockItem#}	reduction
+
+120	}#}	move
+121	EOF#EOF	accept
