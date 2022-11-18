@@ -15,9 +15,6 @@ public class TextParse {
     static void writeAllIntoFile() {
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(Config.formulaPath));
-            out.write("文法解析结果如下: --------------------\n");
-            out.write("总共有 " + formulas.size() + " 条数据\n");
-            out.write("\n");
             for (Formula formula : formulas) {
                 out.write("文法左侧: " + formula.left + " 文法右侧: " + Arrays.toString(formula.right) + "\n");
             }
@@ -28,9 +25,6 @@ public class TextParse {
 
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(Config.terminalPath));
-            out.write("从文法中解析的终结符结果如下: --------------------\n");
-            out.write("总共有 " + terminals.size() + " 条数据\n");
-            out.write("\n");
             for (String s : terminals) {
                 out.write(s + "\n");
             }
@@ -41,9 +35,6 @@ public class TextParse {
 
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(Config.nonTerminalPath));
-            out.write("从文法中解析的非终结符结果如下: --------------------\n");
-            out.write("总共有 " + nonTerminals.size() + " 条数据\n");
-            out.write("\n");
             for (String s : nonTerminals) {
                 out.write(s + "\n");
             }
@@ -54,9 +45,6 @@ public class TextParse {
 
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(Config.firstTablePath));
-            out.write("First列表结果如下: --------------------\n");
-            out.write("总共有 " + firsts.size() + " 条数据\n");
-            out.write("\n");
             for (String s : firsts.keySet()) {
                 out.write(s + "   " + firsts.get(s) + "\n");
             }
@@ -67,9 +55,6 @@ public class TextParse {
 
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(Config.followTablePath));
-            out.write("Follow列表结果如下: --------------------\n");
-            out.write("总共有 " + follows.size() + " 条数据\n");
-            out.write("\n");
             for (String s : follows.keySet()) {
                 out.write(s + "   " + follows.get(s) + "\n");
             }
@@ -80,9 +65,6 @@ public class TextParse {
 
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(Config.predictMapPath));
-            out.write("预测表结果如下: --------------------\n");
-            out.write("总共有 " + predictions.size() + " 条数据\n");
-            out.write("\n");
             for (String s : predictions.keySet()) {
                 out.write(s + "   " + "文法: " + predictions.get(s).left + "->" +
                         Arrays.toString(predictions.get(s).right) + "\n");

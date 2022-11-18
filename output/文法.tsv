@@ -1,6 +1,3 @@
-文法解析结果如下: --------------------
-总共有 77 条数据
-
 文法左侧: program 文法右侧: [compUnit]
 文法左侧: compUnit 文法右侧: [decl, compUnit]
 文法左侧: compUnit 文法右侧: [funcDef, compUnit]

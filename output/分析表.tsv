@@ -1,6 +1,3 @@
-预测表结果如下: --------------------
-总共有 217 条数据
-
 {横坐标: (  纵坐标: constInitVal}   文法: constInitVal->[constExp]
 {横坐标: >=  纵坐标: addExpAtom}   文法: addExpAtom->[$]
 {横坐标: <  纵坐标: addExpAtom}   文法: addExpAtom->[$]

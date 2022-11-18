@@ -35,9 +35,6 @@ public class MainParse {
     static void writeLexiconMiddleResultIntoFile() {
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(Config.lexiconMiddleResult));
-            out.write("词法分析的中间结果结果如下: --------------------\n");
-            out.write("总共有 " + input_str.size() + " 条数据\n");
-            out.write("\n");
             for (String s : input_str) {
                 out.write(s + "\n");
             }
