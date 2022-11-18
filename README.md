@@ -5,6 +5,39 @@
 
 代码结构：
 
+```
+compiler
+    |- input
+        |- grammer.txt
+        |- 测试文件
+        |- ...
+    |- output
+        |- First集合.txt
+        |- Follow集合.txt
+        |- 分析表.txt
+        |- 文法.txt
+        |- 终结符.txt
+        |- 词法分析产生的中间结果.txt
+        |- 非终结符.txt
+    |- result
+        |- gra.tsv
+        |- lex.tsv
+    |- src
+        |- Config.java
+        |- TextLexicon.java
+        |- TextLexiconInput.java
+        |- MainLexicon.java
+        |- FirstTable.java
+        |- FollowTable.java
+        |- PredictMap.java
+        |- TextParse.java
+        |- TextParseInput.java
+        |- MainParse.java
+        |- Main.java
+    |- README.md
+```
+
+
 Config: 一些配置
 
 TextLexicon: 词法分析的主类
