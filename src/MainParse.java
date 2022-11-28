@@ -66,18 +66,18 @@ public class MainParse {
         while (true) {
             parse_result_counter++; // 语法分析结果的计数器加一
             if (symbol_stack.get(symbol_stack.size()-1).equals("#") && input_str.get(0).equals("#")) {
-                parse_result_stack.add(parse_result_counter + " "
+                parse_result_stack.add(parse_result_counter + "\t"
                         + "EOF" + "#"
-                        + "EOF" + " " + "accept");
+                        + "EOF" + "\t" + "accept");
                 break;
             }
             // 输入缓冲区与推导符号串第一个字符相等的话，删掉
             try {
                 if(input_str.get(0).equals(symbol_stack.get(symbol_stack.size()-1))){
                     // 语法分析的结果写入栈中
-                    parse_result_stack.add(parse_result_counter + " "
+                    parse_result_stack.add(parse_result_counter + "\t"
                             + symbol_stack.get(symbol_stack.size()-1) + "#"
-                            + input_str.get(0) + " " + "move");
+                            + input_str.get(0) + "\t" + "move");
                     input_str.remove(0);    // 输入字符移除第一个，类似于指针向后遍历
                     symbol_stack.remove(symbol_stack.size()-1); // 符号栈移除栈顶
                     continue;
@@ -94,9 +94,9 @@ public class MainParse {
             Formula formula = predictMap.get(predictMapKey);    // 找到文法
             if (formula != null) {  // 文法不为空，为空报错
                 // 语法分析的结果写入栈中
-                parse_result_stack.add(parse_result_counter + " "
+                parse_result_stack.add(parse_result_counter + "\t"
                         + symbol_stack.get(symbol_stack.size()-1) + "#"
-                        + input_str.get(0) + " " + "reduction");
+                        + input_str.get(0) + "\t" + "reduction");
                 // 符号栈的最后一个元素如果是 #, 就不能删除了
                 if (symbol_stack.get(symbol_stack.size()-1).equals("#")) {
                 } else {
@@ -114,9 +114,9 @@ public class MainParse {
 
             else {
                 // 语法分析的结果写入栈中
-                parse_result_stack.add(parse_result_counter + " "
+                parse_result_stack.add(parse_result_counter + "\t"
                         + symbol_stack.get(symbol_stack.size()-1) + "#"
-                        + input_str.get(0) + " " + "error");
+                        + input_str.get(0) + "\t" + "error");
                 return; // 遇到error直接返回
             }
         }

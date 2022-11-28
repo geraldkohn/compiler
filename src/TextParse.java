@@ -16,7 +16,7 @@ public class TextParse {
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(Config.formulaPath));
             for (Formula formula : formulas) {
-                out.write("文法左侧: " + formula.left + " 文法右侧: " + Arrays.toString(formula.right) + "\n");
+                out.write("文法左侧: " + formula.left + "\t" + "文法右侧: " + Arrays.toString(formula.right) + "\n");
             }
             out.close();
         } catch (IOException e) {
@@ -46,7 +46,7 @@ public class TextParse {
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(Config.firstTablePath));
             for (String s : firsts.keySet()) {
-                out.write(s + "   " + firsts.get(s) + "\n");
+                out.write(s + "\t" + firsts.get(s) + "\n");
             }
             out.close();
         } catch (IOException e) {
@@ -56,7 +56,7 @@ public class TextParse {
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(Config.followTablePath));
             for (String s : follows.keySet()) {
-                out.write(s + "   " + follows.get(s) + "\n");
+                out.write(s + "\t" + follows.get(s) + "\n");
             }
             out.close();
         } catch (IOException e) {
@@ -66,7 +66,7 @@ public class TextParse {
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(Config.predictMapPath));
             for (String s : predictions.keySet()) {
-                out.write(s + "   " + "文法: " + predictions.get(s).left + "->" +
+                out.write(s + "\t" + "文法: " + predictions.get(s).left + "->" +
                         Arrays.toString(predictions.get(s).right) + "\n");
             }
             out.close();

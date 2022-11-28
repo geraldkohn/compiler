@@ -32,7 +32,7 @@ public class MainLexicon {
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(Config.lexiconResultPath));
             for (ArrayList<String> threeElement : threeElements) {
-                out.write(threeElement.get(0) + " <"
+                out.write(threeElement.get(0) + "\t" + "<"
                         + threeElement.get(1) + ","
                         + threeElement.get(2) + ">"
                         + "\n"
