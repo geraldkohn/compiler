@@ -6,7 +6,8 @@ public class Config {
 //    static String lexInputPath = ".\\input\\2.txt";
 //    static String lexInputPath = ".\\input\\3.txt";
 //    static String lexInputPath = ".\\input\\4.txt";
-    static String lexInputPath = ".\\input\\5.txt";
+//    static String lexInputPath = ".\\input\\5.txt";
+    static String lexInputPath = ".\\input\\code.txt";
 
     static String formulaPath = ".\\output\\文法.tsv";
     static String firstTablePath = ".\\output\\First集合.tsv";
