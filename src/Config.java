@@ -16,8 +16,8 @@ public class Config {
     static String terminalPath = ".\\output\\终结符.tsv";
     static String nonTerminalPath = ".\\output\\非终结符.tsv";
     static String lexiconMiddleResult = ".\\output\\词法分析产生的中间结果.tsv";
-    static String parseResultPath = ".\\result\\15 gra.tsv";
-    static String lexiconResultPath = ".\\result\\15 lex.tsv";
+    static String parseResultPath = ".\\result\\gra.tsv";
+    static String lexiconResultPath = ".\\result\\lex.tsv";
 
     static String initSymbol = "program"; // 入口文法！
 }
